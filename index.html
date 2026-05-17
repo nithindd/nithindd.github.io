@@ -304,8 +304,27 @@
 
   /* ── STATS ───────────────────────────────────────────── */
   #stats { background: var(--bg); }
-  .stats-wrap { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
-  .stats-wrap img { border-radius: 12px; border: 1px solid var(--border); height: auto; max-width: 100%; }
+  .stats-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 14px; margin-bottom: 28px; }
+  @media(max-width:720px) { .stats-grid { grid-template-columns: repeat(2,1fr); } }
+  @media(max-width:400px) { .stats-grid { grid-template-columns: 1fr 1fr; } }
+  .stat-box {
+    background: var(--bg2); border: 1px solid var(--border);
+    border-radius: var(--r); padding: 22px 20px; text-align: center;
+    box-shadow: var(--shadow-s); transition: transform .3s, box-shadow .3s, border-color .3s;
+  }
+  .stat-box:hover { transform: translateY(-4px); box-shadow: var(--shadow-m); border-color: #a5b4fc; }
+  .stat-box-num { font-size: 2rem; font-weight: 800; letter-spacing: -.03em; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  .stat-box-lbl { font-size: 12px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: .06em; margin-top: 4px; }
+  .langs-card {
+    background: var(--bg2); border: 1px solid var(--border);
+    border-radius: var(--r); padding: 24px 28px; box-shadow: var(--shadow-s);
+  }
+  .langs-title { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .07em; color: var(--muted); margin-bottom: 18px; }
+  .lang-row { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+  .lang-name { font-family: 'JetBrains Mono',monospace; font-size: 12px; font-weight: 500; color: var(--text2); min-width: 110px; }
+  .lang-bar-wrap { flex: 1; height: 7px; background: var(--bg3); border-radius: 999px; overflow: hidden; }
+  .lang-bar { height: 100%; border-radius: 999px; width: 0; transition: width 1.2s cubic-bezier(.4,0,.2,1); }
+  .lang-pct { font-family: 'JetBrains Mono',monospace; font-size: 11px; color: var(--muted); min-width: 38px; text-align: right; }
 
   /* ── CONNECT ─────────────────────────────────────────── */
   #connect {
@@ -618,17 +637,19 @@
   <div class="container">
     <div class="eyebrow reveal">Activity</div>
     <h2 class="sec-title reveal">GitHub Stats</h2>
-    <div class="stats-wrap reveal">
-      <img
-        src="https://github-readme-stats.vercel.app/api?username=nithindd&show_icons=true&hide_border=true&count_private=true&theme=default&title_color=4f46e5&icon_color=7c3aed&text_color=3d4260&bg_color=ffffff"
-        alt="Nithin's GitHub Stats"
-        loading="lazy"
-      />
-      <img
-        src="https://github-readme-stats.vercel.app/api/top-langs/?username=nithindd&layout=compact&hide_border=true&theme=default&title_color=4f46e5&text_color=3d4260&bg_color=ffffff"
-        alt="Top Languages"
-        loading="lazy"
-      />
+
+    <!-- stat number boxes -->
+    <div class="stats-grid reveal">
+      <div class="stat-box"><div class="stat-box-num" id="s-repos">—</div><div class="stat-box-lbl">Public Repos</div></div>
+      <div class="stat-box"><div class="stat-box-num" id="s-stars">—</div><div class="stat-box-lbl">Total Stars</div></div>
+      <div class="stat-box"><div class="stat-box-num" id="s-followers">—</div><div class="stat-box-lbl">Followers</div></div>
+      <div class="stat-box"><div class="stat-box-num" id="s-langs">—</div><div class="stat-box-lbl">Languages Used</div></div>
+    </div>
+
+    <!-- language breakdown -->
+    <div class="langs-card reveal" id="langs-card">
+      <div class="langs-title">Top Languages</div>
+      <div id="langs-bars"><div style="color:var(--muted);font-size:13px;">Loading…</div></div>
     </div>
   </div>
 </section>
@@ -726,6 +747,82 @@
     });
   }, { threshold: 0.3 });
   document.querySelectorAll('.hero-right').forEach(el => counterObs.observe(el));
+
+  /* ── GitHub Stats via API ── */
+  const LANG_COLORS = {
+    TypeScript:'#3178c6', JavaScript:'#f1e05a', Python:'#3572A5',
+    Java:'#b07219', 'C++':'#f34b7d', HTML:'#e34c26',
+    'Jupyter Notebook':'#DA5B0B', CSS:'#563d7c', Shell:'#89e051'
+  };
+
+  async function loadGitHubStats() {
+    try {
+      const [user, repos] = await Promise.all([
+        fetch('https://api.github.com/users/nithindd').then(r => r.json()),
+        fetch('https://api.github.com/users/nithindd/repos?per_page=100').then(r => r.json())
+      ]);
+
+      // Summary numbers
+      const stars = repos.reduce((s, r) => s + (r.stargazers_count || 0), 0);
+      const langSet = new Set(repos.map(r => r.language).filter(Boolean));
+
+      function countUp(el, target) {
+        if (!el) return;
+        let v = 0; const step = Math.max(1, Math.floor(target / 40));
+        const t = setInterval(() => {
+          v = Math.min(v + step, target);
+          el.textContent = v;
+          if (v >= target) clearInterval(t);
+        }, 30);
+      }
+
+      countUp(document.getElementById('s-repos'), user.public_repos || 39);
+      countUp(document.getElementById('s-stars'), stars);
+      countUp(document.getElementById('s-followers'), user.followers || 0);
+      countUp(document.getElementById('s-langs'), langSet.size);
+
+      // Language breakdown (by repo count)
+      const langCount = {};
+      repos.forEach(r => { if (r.language) langCount[r.language] = (langCount[r.language] || 0) + 1; });
+      const total = Object.values(langCount).reduce((a, b) => a + b, 0);
+      const top = Object.entries(langCount).sort((a, b) => b[1] - a[1]).slice(0, 7);
+
+      const barsEl = document.getElementById('langs-bars');
+      barsEl.innerHTML = top.map(([lang, count]) => {
+        const pct = Math.round((count / total) * 100);
+        const color = LANG_COLORS[lang] || '#6366f1';
+        return `
+          <div class="lang-row">
+            <span class="lang-name">${lang}</span>
+            <div class="lang-bar-wrap">
+              <div class="lang-bar" data-w="${pct}" style="background:${color}"></div>
+            </div>
+            <span class="lang-pct">${pct}%</span>
+          </div>`;
+      }).join('');
+
+      // Animate bars on scroll into view
+      const barObs = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.querySelectorAll('.lang-bar').forEach(b => b.style.width = b.dataset.w + '%');
+            barObs.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.2 });
+      const card = document.getElementById('langs-card');
+      if (card) barObs.observe(card);
+
+    } catch(err) {
+      console.warn('GitHub API unavailable', err);
+      document.getElementById('s-repos').textContent = '39';
+      document.getElementById('s-stars').textContent = '7';
+      document.getElementById('s-followers').textContent = '7';
+      document.getElementById('s-langs').textContent = '7';
+      document.getElementById('langs-bars').innerHTML = '<span style="color:var(--muted);font-size:13px;">TypeScript · Python · JavaScript · Java · C++</span>';
+    }
+  }
+  loadGitHubStats();
 </script>
 
 </body>
