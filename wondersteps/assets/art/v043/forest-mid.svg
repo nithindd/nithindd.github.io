@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<defs>
+  <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#315746"/>
+    <stop offset=".55" stop-color="#274636"/>
+    <stop offset="1" stop-color="#172f27"/>
+  </linearGradient>
+  <linearGradient id="path" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#756c57"/>
+    <stop offset=".52" stop-color="#625947"/>
+    <stop offset="1" stop-color="#4a4437"/>
+  </linearGradient>
+  <linearGradient id="trunk" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#2f281f"/>
+    <stop offset=".44" stop-color="#604a35"/>
+    <stop offset="1" stop-color="#241f1b"/>
+  </linearGradient>
+  <radialGradient id="mossGlow"><stop offset="0" stop-color="#69c6a7" stop-opacity=".4"/><stop offset="1" stop-color="#69c6a7" stop-opacity="0"/></radialGradient>
+  <filter id="soft"><feGaussianBlur stdDeviation="8"/></filter>
+  <filter id="groundNoise"><feTurbulence type="fractalNoise" baseFrequency=".035" numOctaves="3" seed="11" result="n"/><feColorMatrix in="n" type="saturate" values=".25"/><feBlend in="SourceGraphic" mode="soft-light"/></filter>
+</defs>
+
+<!-- forest floor -->
+<path d="M0 315 H1600 V900 H0Z" fill="url(#ground)"/>
+<path d="M640 300 C635 420 610 510 545 610 C475 720 420 815 390 900 H1170 C1122 802 1050 704 998 610 C945 514 910 414 900 300Z" fill="url(#path)" filter="url(#groundNoise)"/>
+
+<!-- winding inner path -->
+<path d="M762 300 C740 410 710 470 728 530 C744 584 817 615 800 674 C782 735 680 795 640 900" fill="none" stroke="#a99b7c" stroke-opacity=".22" stroke-width="48" stroke-linecap="round"/>
+<path d="M762 300 C740 410 710 470 728 530 C744 584 817 615 800 674 C782 735 680 795 640 900" fill="none" stroke="#c3b18b" stroke-opacity=".09" stroke-width="17" stroke-linecap="round"/>
+
+<!-- ancient tree left -->
+<g transform="translate(10 130)">
+  <path d="M95 650 C78 560 96 492 70 420 C45 348 52 248 92 150 C112 100 125 44 116 0 H270 C238 72 244 142 272 210 C310 300 315 392 292 480 C270 565 292 620 318 650Z" fill="url(#trunk)"/>
+  <path d="M92 575 C35 600 5 650 -18 735 C60 686 122 670 180 682Z" fill="#30291f"/>
+  <path d="M282 568 C350 596 395 650 420 724 C342 683 282 670 230 684Z" fill="#3d3024"/>
+  <path d="M145 178 C118 266 125 368 156 438" fill="none" stroke="#8b6a48" stroke-opacity=".36" stroke-width="18" stroke-linecap="round"/>
+  <g fill="#396a47"><ellipse cx="160" cy="250" rx="38" ry="20"/><ellipse cx="116" cy="402" rx="48" ry="22"/><ellipse cx="245" cy="458" rx="52" ry="22"/></g>
+</g>
+
+<!-- ancient tree right -->
+<g transform="translate(1265 90)">
+  <path d="M205 700 C218 590 198 520 226 438 C252 360 246 260 210 165 C190 112 181 54 194 0 H36 C65 80 56 148 29 215 C-5 305 -9 408 20 498 C46 577 20 650 -5 700Z" fill="url(#trunk)"/>
+  <path d="M44 610 C-22 644 -63 695 -85 790 C-15 726 48 704 112 712Z" fill="#33291f"/>
+  <path d="M212 610 C277 635 340 704 365 790 C290 733 222 710 168 720Z" fill="#3b3025"/>
+  <path d="M170 190 C197 292 184 382 152 458" fill="none" stroke="#8d6c4a" stroke-opacity=".31" stroke-width="18" stroke-linecap="round"/>
+  <g fill="#376846"><ellipse cx="175" cy="285" rx="45" ry="21"/><ellipse cx="214" cy="420" rx="44" ry="20"/><ellipse cx="87" cy="500" rx="56" ry="24"/></g>
+</g>
+
+<!-- midground trunks -->
+<g opacity=".86">
+  <g transform="translate(330 240) scale(.66)"><rect x="80" y="180" width="55" height="420" rx="25" fill="url(#trunk)"/><circle cx="107" cy="125" r="140" fill="#214b39"/><circle cx="25" cy="205" r="85" fill="#2c5b41"/><circle cx="195" cy="195" r="92" fill="#193e31"/></g>
+  <g transform="translate(1010 230) scale(.65)"><rect x="80" y="180" width="55" height="430" rx="25" fill="url(#trunk)"/><circle cx="108" cy="125" r="145" fill="#204938"/><circle cx="24" cy="205" r="88" fill="#2c5a41"/><circle cx="198" cy="195" r="96" fill="#183d30"/></g>
+</g>
+
+<!-- stones lining path -->
+<g fill="#55645b" stroke="#27362f" stroke-width="4" opacity=".96">
+  <ellipse cx="535" cy="605" rx="45" ry="23"/><ellipse cx="1065" cy="598" rx="38" ry="20"/>
+  <ellipse cx="470" cy="730" rx="52" ry="25"/><ellipse cx="1120" cy="735" rx="50" ry="23"/>
+  <ellipse cx="450" cy="840" rx="58" ry="28"/><ellipse cx="1160" cy="838" rx="62" ry="30"/>
+</g>
+
+<!-- ferns and undergrowth -->
+<g fill="#376e4a" opacity=".98">
+  <path d="M260 760 C315 690 335 696 350 775 C325 738 304 737 290 790Z"/><path d="M1260 745 C1200 685 1170 704 1165 782 C1194 742 1223 739 1235 796Z"/>
+  <path d="M355 825 C405 765 430 775 438 845 C414 810 390 807 374 862Z"/><path d="M1190 824 C1140 768 1114 779 1108 851 C1131 812 1155 811 1172 865Z"/>
+</g>
+
+<!-- magical mushrooms -->
+<g>
+  <g transform="translate(248 628)"><ellipse cx="0" cy="0" rx="48" ry="35" fill="url(#mossGlow)" filter="url(#soft)"/><rect x="-4" y="3" width="8" height="24" rx="4" fill="#c5ddd1"/><path d="M-18 5 Q0 -19 18 5Z" fill="#74cfe3" stroke="#b6eff8" stroke-width="3"/></g>
+  <g transform="translate(315 682) scale(.7)"><ellipse cx="0" cy="0" rx="48" ry="35" fill="url(#mossGlow)" filter="url(#soft)"/><rect x="-4" y="3" width="8" height="24" rx="4" fill="#c5ddd1"/><path d="M-18 5 Q0 -19 18 5Z" fill="#a48ae2" stroke="#d6c9ff" stroke-width="3"/></g>
+  <g transform="translate(1312 642) scale(.9)"><ellipse cx="0" cy="0" rx="48" ry="35" fill="url(#mossGlow)" filter="url(#soft)"/><rect x="-4" y="3" width="8" height="24" rx="4" fill="#c5ddd1"/><path d="M-18 5 Q0 -19 18 5Z" fill="#77d8e7" stroke="#c1f4fb" stroke-width="3"/></g>
+  <g transform="translate(1240 715) scale(.63)"><ellipse cx="0" cy="0" rx="48" ry="35" fill="url(#mossGlow)" filter="url(#soft)"/><rect x="-4" y="3" width="8" height="24" rx="4" fill="#c5ddd1"/><path d="M-18 5 Q0 -19 18 5Z" fill="#9d83dc" stroke="#d6c9ff" stroke-width="3"/></g>
+</g>
+
+<!-- flowers -->
+<g fill="#8874bf" opacity=".9"><circle cx="300" cy="740" r="7"/><circle cx="340" cy="760" r="6"/><circle cx="1265" cy="770" r="7"/><circle cx="1310" cy="742" r="6"/></g>
+<g fill="#d8d59a" opacity=".85"><circle cx="288" cy="790" r="5"/><circle cx="390" cy="820" r="4"/><circle cx="1220" cy="815" r="5"/></g>
+</svg>

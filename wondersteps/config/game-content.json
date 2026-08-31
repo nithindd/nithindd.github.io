@@ -1,0 +1,90 @@
+{
+  "brand": {
+    "gameTitle": "Adi's WonderSteps",
+    "displayTitle": "ADI'S WONDERSTEPS",
+    "tagline": "Every step becomes an adventure. Every adventure becomes a memory.",
+    "themeLine": "EXPLORE  •  DISCOVER  •  GROW  •  REMEMBER",
+    "versionLabel": "v0.4.9 · Adi’s WonderSteps",
+    "logoAsset": "assets/art/v045/adis-wondersteps-logo.png",
+    "scoreCredit": "Original Wonderwood score — “A Kindness Remembers”"
+  },
+  "characters": {
+    "player": {
+      "id": "adi",
+      "name": "Adi"
+    },
+    "companion": {
+      "id": "dev",
+      "name": "Dev"
+    },
+    "baker": {
+      "id": "miri",
+      "name": "Baker Miri"
+    }
+  },
+  "activeWorldId": "wonderwood",
+  "worlds": [
+    {
+      "id": "wonderwood",
+      "name": "Wonderwood",
+      "episodeTitle": "The Fountain's Song",
+      "description": "A magical first adventure where kindness wakes old memories.",
+      "locations": {
+        "village": "Sunpetal Village",
+        "forest": "Whispering Forest",
+        "moonpond": "Moonpond Lake",
+        "melodyHills": "Melody Hills",
+        "starlightRuins": "Starlight Ruins"
+      }
+    },
+    {
+      "id": "first-snow",
+      "name": "First Snow",
+      "episodeTitle": "The Morning Everything Turned White",
+      "description": "Adi discovers snow, warmth, footprints, and winter play.",
+      "status": "planned"
+    },
+    {
+      "id": "school-day",
+      "name": "School Days",
+      "episodeTitle": "A Brand-New Classroom",
+      "description": "Adi explores his first school experiences, friends, learning, and confidence.",
+      "status": "planned"
+    },
+    {
+      "id": "bike-ride",
+      "name": "Wheels of Courage",
+      "episodeTitle": "Adi's First Bike Ride",
+      "description": "Balance, falls, encouragement, and the joy of riding independently.",
+      "status": "planned"
+    },
+    {
+      "id": "soccer-with-dad",
+      "name": "Goal Together",
+      "episodeTitle": "Soccer With Dad",
+      "description": "Passing, teamwork, playful competition, and a shared afternoon.",
+      "status": "planned"
+    },
+    {
+      "id": "first-steps",
+      "name": "Little Steps",
+      "episodeTitle": "Walking on My Own",
+      "description": "A memory adventure inspired by Adi learning to walk as a baby.",
+      "status": "planned"
+    },
+    {
+      "id": "train-with-dad",
+      "name": "Tiny Tracks",
+      "episodeTitle": "Building the Train With Dad",
+      "description": "A childhood memory of tracks, trains, problem solving, and time together.",
+      "status": "planned"
+    },
+    {
+      "id": "india",
+      "name": "Journey to India",
+      "episodeTitle": "A World of Family, Food, Places, and Stories",
+      "description": "A travel world designed for discovering culture, family memories, and new places.",
+      "status": "planned"
+    }
+  ]
+}

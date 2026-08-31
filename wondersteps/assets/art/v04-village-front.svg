@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<defs><filter id="soft"><feGaussianBlur stdDeviation="1.4"/></filter></defs>
+<g opacity=".95">
+  <path d="M0 720 C110 670 185 690 285 770 L315 900 H0Z" fill="#274c34"/>
+  <path d="M1600 705 C1490 665 1395 690 1300 785 L1270 900 H1600Z" fill="#264832"/>
+</g>
+<g fill="#3f7547"><circle cx="70" cy="740" r="62"/><circle cx="145" cy="765" r="72"/><circle cx="1530" cy="735" r="70"/><circle cx="1450" cy="780" r="78"/></g>
+<g filter="url(#soft)"><g fill="#f0c85d"><circle cx="92" cy="760" r="12"/><circle cx="175" cy="790" r="10"/><circle cx="1482" cy="770" r="12"/><circle cx="1550" cy="800" r="10"/></g><g fill="#d66d8f"><circle cx="125" cy="810" r="11"/><circle cx="1510" cy="830" r="11"/></g><g fill="#9f79cc"><circle cx="212" cy="830" r="10"/><circle cx="1415" cy="825" r="10"/></g></g>
+<g fill="#203e2b" opacity=".9"><path d="M0 0 C80 0 145 25 205 80 C130 70 75 100 0 150Z"/><path d="M1600 0 C1515 0 1450 25 1385 90 C1470 72 1530 108 1600 165Z"/></g>
+</svg>

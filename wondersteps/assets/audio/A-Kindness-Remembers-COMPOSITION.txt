@@ -1,0 +1,21 @@
+A KINDNESS REMEMBERS — Wonderwood Theme
+
+Original composition created for Wonderwood.
+Tempo: 80 BPM
+Meter: 4/4
+Key center: D major
+Length: 32 bars / approximately 96 seconds
+Intended use: seamless soft exploration loop
+
+PROVENANCE
+- Melody composed specifically for Wonderwood.
+- Harmony and arrangement composed specifically for Wonderwood.
+- Every instrument sound is synthesized mathematically.
+- No third-party recordings, samples, loops, MIDI files, or copied audio are used.
+- No existing artist, composer, soundtrack, or song was used as a stylistic reference.
+
+Main harmonic phrase:
+Dadd9 | Aadd9/C# | Bm7 | Gmaj7 |
+Em7 | Asus4 | Dmaj7/F# | G6
+
+The musical material is deliberately gentle, sparse, and designed to loop beneath gameplay.

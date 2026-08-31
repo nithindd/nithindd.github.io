@@ -1,0 +1,19 @@
+Adi's WonderSteps v0.4.8 — Original audio provenance
+
+Whispering Forest:
+- Original composition created for this project.
+- Warm synthesized pads, harp-like plucks, breathy flute-like tones and dew chimes.
+- Whisper/breeze/leaf textures are generated mathematically from filtered noise.
+- No field recordings, stock loops, sample packs, MIDI files, or third-party audio.
+
+Fountain Awakens:
+- Original one-time restoration cue.
+- Happy rising motif -> synthesized water swell/droplets -> warm musical resolution.
+- Water is synthesized from noise/oscillators, not recorded audio.
+
+Village Restored:
+- Original post-restoration loop.
+- Brighter warm harmony with subtle synthesized fountain-water texture.
+
+No existing artist, composer, game soundtrack, or copyrighted song was intentionally imitated or sampled.
+This file documents provenance; it is not a legal opinion or copyright registration.

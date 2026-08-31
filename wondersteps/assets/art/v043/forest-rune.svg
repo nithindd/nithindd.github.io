@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="260" height="300" viewBox="0 0 260 300">
+<defs>
+  <linearGradient id="stone" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#708179"/><stop offset=".52" stop-color="#3f514a"/><stop offset="1" stop-color="#263832"/></linearGradient>
+  <linearGradient id="rim" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#84a39a"/><stop offset="1" stop-color="#344b44"/></linearGradient>
+  <radialGradient id="glow"><stop stop-color="#c8fbff" stop-opacity=".9"/><stop offset=".32" stop-color="#6de4ff" stop-opacity=".45"/><stop offset="1" stop-color="#36aacc" stop-opacity="0"/></radialGradient>
+</defs>
+<ellipse cx="130" cy="260" rx="105" ry="28" fill="#0c1f1a" opacity=".45"/>
+<ellipse cx="130" cy="236" rx="112" ry="36" fill="url(#stone)" stroke="#21352f" stroke-width="7"/>
+<ellipse cx="130" cy="222" rx="88" ry="27" fill="url(#rim)" stroke="#2b423c" stroke-width="5"/>
+<rect x="91" y="92" width="78" height="136" rx="18" fill="url(#stone)" stroke="#243a34" stroke-width="7"/>
+<ellipse cx="130" cy="96" rx="53" ry="23" fill="#445c55" stroke="#2b403a" stroke-width="6"/>
+<circle cx="130" cy="94" r="78" fill="url(#glow)"/>
+<circle cx="130" cy="94" r="48" fill="#0d2831" stroke="#77e8ff" stroke-width="6"/>
+<path d="M130 53 L145 81 L177 88 L151 107 L157 139 L130 121 L103 139 L109 107 L83 88 L115 81Z" fill="#73dbef" opacity=".86" stroke="#c7f9ff" stroke-width="4"/>
+<path d="M112 160 H148 M106 181 H154 M116 202 H144" stroke="#6ccbe0" stroke-width="5" stroke-linecap="round" opacity=".65"/>
+</svg>

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760">
+<defs>
+ <linearGradient id="paper" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#f4dfad"/><stop offset="1" stop-color="#d7bc80"/></linearGradient>
+ <filter id="soft"><feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#3b2b1e" flood-opacity=".3"/></filter>
+</defs>
+<rect x="20" y="20" width="1160" height="720" rx="54" fill="url(#paper)" stroke="#7b5637" stroke-width="12" filter="url(#soft)"/>
+<path d="M115 580 C260 470 345 460 455 360 S680 250 790 325 S940 400 1095 230" fill="none" stroke="#b79762" stroke-width="36" stroke-linecap="round" opacity=".9"/>
+<path d="M115 580 C260 470 345 460 455 360 S680 250 790 325 S940 400 1095 230" fill="none" stroke="#755a3e" stroke-width="4" stroke-dasharray="13 16" opacity=".55"/>
+<ellipse cx="595" cy="405" rx="205" ry="120" fill="#7eb775" stroke="#507a50" stroke-width="6"/>
+<ellipse cx="930" cy="235" rx="185" ry="125" fill="#47725a" stroke="#315340" stroke-width="6"/>
+<ellipse cx="330" cy="555" rx="175" ry="105" fill="#9dbb67" stroke="#718347" stroke-width="6"/>
+<ellipse cx="820" cy="565" rx="170" ry="95" fill="#a68ab7" stroke="#745e82" stroke-width="6"/>
+<ellipse cx="565" cy="170" rx="185" ry="90" fill="#77aab2" stroke="#4d7982" stroke-width="6"/>
+<g fill="#e6c367" stroke="#6c4b2e" stroke-width="5">
+ <path d="M520 390 l75-70 75 70 v95 h-150z"/>
+ <path d="M884 222 l48-55 48 55 v68 h-96z"/>
+ <path d="M285 542 l45-50 45 50 v62 h-90z"/>
+ <path d="M780 545 l52-62 52 62 v68 h-104z"/>
+</g>
+<circle cx="595" cy="405" r="25" fill="#f2d062" stroke="#6c4b2e" stroke-width="6"/>
+<circle cx="930" cy="235" r="20" fill="#7adfe8" stroke="#355e63" stroke-width="6"/>
+<circle cx="565" cy="170" r="22" fill="#8ed3e0" stroke="#355e63" stroke-width="6"/>
+<circle cx="330" cy="555" r="20" fill="#f0a868" stroke="#6c4b2e" stroke-width="6"/>
+<circle cx="820" cy="565" r="20" fill="#c29bd4" stroke="#6a5677" stroke-width="6"/>
+<g font-family="Georgia,serif" font-size="30" font-weight="700" fill="#443321" text-anchor="middle">
+ <text x="595" y="525">Sunpetal Village</text>
+ <text x="930" y="385">Whispering Forest</text>
+ <text x="565" y="95">Moonpond Lake</text>
+ <text x="330" y="690">Melody Hills</text>
+ <text x="820" y="700">Starlight Ruins</text>
+</g>
+</svg>
