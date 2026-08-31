@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="340" height="300" viewBox="0 0 340 300">
-<defs><radialGradient id="glow"><stop stop-color="#d9ffff" stop-opacity=".9"/><stop offset=".4" stop-color="#65d8f0" stop-opacity=".35"/><stop offset="1" stop-color="#65d8f0" stop-opacity="0"/></radialGradient><linearGradient id="water" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#d8fbff"/><stop offset="1" stop-color="#56b9d7"/></linearGradient></defs>
-<circle cx="170" cy="145" r="145" fill="url(#glow)"/><ellipse cx="170" cy="265" rx="120" ry="20" fill="#203128" opacity=".25"/>
-<ellipse cx="170" cy="224" rx="130" ry="48" fill="#89999a" stroke="#596463" stroke-width="10"/><ellipse cx="170" cy="215" rx="105" ry="32" fill="url(#water)" stroke="#596463" stroke-width="7"/>
-<rect x="149" y="92" width="42" height="122" rx="15" fill="#829394" stroke="#596463" stroke-width="8"/><ellipse cx="170" cy="97" rx="70" ry="23" fill="#8fa1a2" stroke="#596463" stroke-width="8"/>
-<path d="M170 97 C141 67 150 36 170 17 C189 37 199 67 170 97Z" fill="url(#water)" opacity=".95"/><path d="M112 104 Q120 168 143 210" fill="none" stroke="#8be7fb" stroke-width="9" stroke-linecap="round"/><path d="M228 104 Q220 168 197 210" fill="none" stroke="#8be7fb" stroke-width="9" stroke-linecap="round"/>
-<circle cx="69" cy="180" r="8" fill="#c9faff"/><circle cx="278" cy="170" r="7" fill="#c9faff"/><circle cx="253" cy="98" r="6" fill="#fff3b0"/>
-</svg>
